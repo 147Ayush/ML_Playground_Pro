@@ -1,24 +1,17 @@
 import streamlit as st
 
-def render_navigation():
-    st.markdown("## 🧭 Navigation")
+def top_nav():
+    pages = ["Home", "Preprocessing", "Model Config", "Training", "Evaluation"]
 
-    col1, col2, col3, col4, col5 = st.columns(5)
+    cols = st.columns(len(pages))
 
-    with col1:
-        if st.button("🏠 Home"):
-            st.session_state.page = "Home"
-    with col2:
-        if st.button("🧹 Preprocessing"):
-            st.session_state.page = "Data Preprocessing"
-    with col3:
-        if st.button("⚙️ Model Config"):
-            st.session_state.page = "Model Configuration"
-    with col4:
-        if st.button("🚀 Training"):
-            st.session_state.page = "Training"
-    with col5:
-        if st.button("📊 Evaluation"):
-            st.session_state.page = "Evaluation"
+    for col, page in zip(cols, pages):
+        with col:
+            if st.button(
+                page,
+                use_container_width=True,
+                type="primary" if st.session_state.page == page else "secondary"
+            ):
+                st.session_state.page = page
 
     st.divider()

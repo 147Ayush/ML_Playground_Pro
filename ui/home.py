@@ -20,16 +20,4 @@ def render():
     </div>
     """, unsafe_allow_html=True)
 
-    st.markdown("### 🚀 Quick Start")
-
-    col1, col2, col3 = st.columns(3)
-
-    with col1:
-        if st.button("🧹 Data Preprocessing"):
-            st.session_state.page = "Data Preprocessing"
-    with col2:
-        if st.button("⚙️ Configure Model"):
-            st.session_state.page = "Model Configuration"
-    with col3:
-        if st.button("🚀 Train & Evaluate"):
-            st.session_state.page = "Training"
+  

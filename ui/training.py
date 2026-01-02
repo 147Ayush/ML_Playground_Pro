@@ -1,15 +1,14 @@
 import streamlit as st
 
 def render():
-    st.markdown("## 🚀 Model Training")
+    st.markdown("## Model Training")
 
     st.markdown('<div class="card">', unsafe_allow_html=True)
 
-    st.subheader("🔁 Cross Validation")
-    st.slider("Number of folds", 2, 10, 5)
+    st.info("Training logic will execute here.")
+    st.success("Model trained successfully (placeholder).")
 
-    if st.button("▶️ Start Training"):
-        with st.spinner("Training model..."):
-            st.success("Training completed successfully!")
+    if st.button("Next → Evaluation"):
+        st.session_state.page = "Evaluation"
 
     st.markdown('</div>', unsafe_allow_html=True)
